@@ -1,13 +1,17 @@
 
 function generateQRCode() {
-    var text = document.getElementById("input").value;
+    let text = document.getElementById("input");
 
-    if (text === "") {
+    if (text.value === "") {
         alert("enter text");
         return;
-}
+    }
 
-    let qrcode = new QRCode(document.getElementById("qrcode"), {
+    let qrCodeHtml = document.getElementById("qrcode");
+
+    qrCodeHtml.innerHTML = "";
+
+    let qrcode = new QRCode(qrCodeHtml, {
         text: text,
         width: 128,
         height: 128,
@@ -15,5 +19,7 @@ function generateQRCode() {
         colorLight: "#ffffff",
         correctLevel: QRCode.CorrectLevel.H
     })
+
+    text.value = "";
 
 }
