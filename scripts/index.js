@@ -12,13 +12,15 @@ function generateQRCode() {
     qrCodeHtml.innerHTML = "";
 
     let qrcode = new QRCode(qrCodeHtml, {
-        text: text,
+        text: text.value,
         width: 128,
         height: 128,
         colorDark: "#000000",
         colorLight: "#ffffff",
         correctLevel: QRCode.CorrectLevel.H
     })
+
+    qrcode.makeCode(text.value);
 
     text.value = "";
 
