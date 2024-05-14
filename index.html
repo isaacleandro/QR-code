@@ -12,10 +12,17 @@
 
     <div class="container">
         <h1>QRcode Generator</h1>
+        <div class="badgesContainer">
+            <button class="badge" onclick="insertInputPattern()">Email</button>
+            <button class="badge" onclick="insertInputPattern()">Phone</button>
+            <button class="badge" onclick="insertInputPattern()">SMS</button>
+        </div>
+
         <div class="type">
             <input class="textfield" type="text" id="input" placeholder="Enter text">
             <button onclick="generateQRCode()" class="generateButton">Gerar</button>
         </div>
+
         <div id="qrcode"></div>
     </div>
 
